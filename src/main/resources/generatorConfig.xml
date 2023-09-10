@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD
+    MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry location="/Users/iwamototakayuki/.gradle/caches/modules2/files2.1/mysql/mysqlconnectorjava/8.0.33/b4f2df0556aeee8e51234970711edbf5cbc41995/mysql-connector-java-8.0.33.pom"/>
+    <context id="MySQLTables" targetRuntime="MyBatis3Kotlin">
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://127.0.0.1:3306/book_manager"
+                userId="root"
+                password="mysql">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <javaModelGenerator
+                targetPackage="com.example.demo.database.mapper"
+                targetProject="src/main/kotlin">
+        </javaModelGenerator>
+        <javaClientGenerator
+                targetPackage="com.example.demo.database"
+                targetProject="src/main/kotlin">
+        </javaClientGenerator>
+        <table tableName="%" >
+            <columnOverride column="role_type" typeHandler="org.apache.ibatis.type.EnumTypeHandler" javaType="com.book.manager.domain.enum.RoleType" />
+        </table>
+    </context>
+</generatorConfiguration>
